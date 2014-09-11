@@ -74,18 +74,35 @@ h2 {
 
 .list li {
 	font-size: 1.1em;
-	padding: 10px 0 10px 55px;
+	padding-left: 55px;
 	border-bottom: 1px solid #dadada;
 	position: relative;
+	height: 43px;
+	padding-top: 10px;
 }
 
-.list li:hover {
+.normal:hover {
 	background: #f4fcf0;
-	cursor: text;
 }
 
 
 /* SPECIAL FEATURES ON LIST ITEMS */
+.edit {
+	display: none;
+	line-height: 12px;
+	margin-left: -1px;
+}
+
+.edit:focus {
+	outline: none;
+	background: #F0F8FC;
+	border: none;
+}
+
+.highlighted {
+	background: #F0F8FC;
+}
+
 .list li:hover .box, .list li:hover .handle, .list li:hover .delete {
 	display: block;
 }
@@ -101,7 +118,7 @@ h2 {
 }
 
 .handle:hover {
-	cursor: pointer;
+	cursor: move;
 }
 
 .box {

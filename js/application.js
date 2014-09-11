@@ -8,7 +8,7 @@ $(document).ready(function() {
 			var item = $('#entry').val();
 			
 			if (item!="") {
-				var item_listed = "<li class='active'><div class='handle'></div><div class='box'><img src='images/check.png' /></div>" + item + "<div class='delete'><img src='images/delete.png' /></div></li>"
+				var item_listed = "<li class='active'><div class='handle'></div><div class='box'><img src='images/check.png' /></div><span class='text'>" + item + "</span><input type='text' class='edit'><div class='delete'><img src='images/delete.png' /></div></li>"
 				$("ul").prepend(item_listed);
 				$('#entry').val('').focusout();
 			}
@@ -44,6 +44,7 @@ $(document).ready(function() {
 		else {
 			$(this).find("img").hide();
 			$(this).parent("li").toggleClass("erased active");
+
 		};
 	});
 
@@ -52,6 +53,7 @@ $(document).ready(function() {
 	$("ul").on("click", "li .delete", function() {
 		$(this).parent("li").show(0).css("background","#DBDBDB").delay(120).fadeOut(120);
 	});
+
 
 // SORTABLE LIST
 	$('.list').sortable({
@@ -65,8 +67,33 @@ $(document).ready(function() {
 	    }
 	});
 
+// EDIT AN ITEM IN THE LIST
+	$("ul").on("click", "li .text", function() {
+		$(this).hide();
+		$(this).siblings(".edit").show().val($(this).text()).focus();
+	});
 
+	$("ul").on("focusin", "li .edit", function() {
+		$(this).parent("li").toggleClass("normal highlighted");
+	});
+
+	$("ul").on("keydown", "li .edit", function(e)  {
+		if (e.keyCode == 13) { 
+			$(this).hide();
+		}
+	});
+
+	$("ul").on("focusout", "li .edit", function() {
+		$(this).hide();
+		$(this).siblings(".text").show().text($(this).val());
+		$(this).parent("li").toggleClass("highlighted normal");
+	});
+
+// END OF JQUERY
 });
+
+
+
 
 
 
