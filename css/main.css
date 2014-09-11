@@ -24,6 +24,7 @@ h2 {
 	margin-top: 23px;
 }
 
+
 /* INPUT FIELD */
 .form-control {
 	height: 45px;
@@ -46,6 +47,14 @@ h2 {
 	outline: 0;
 }
 
+.alert {
+	font-size: 1.1em;
+	padding: 12px 15px;
+	margin: 10px 0;
+	display: none;
+}
+
+
 /* THE SHOPPING LIST */
 .list {
 	background-color: white;
@@ -56,6 +65,11 @@ h2 {
 	padding: 0;
 	height: 390px;
 	overflow: scroll;
+}
+
+.short_list {
+	height:342px;
+	margin-top: 10px;
 }
 
 .list li {
@@ -70,6 +84,12 @@ h2 {
 	cursor: text;
 }
 
+
+/* SPECIAL FEATURES ON LIST ITEMS */
+.list li:hover .box, .list li:hover .handle, .list li:hover .delete {
+	display: block;
+}
+
 .handle {
 	width: 17px;
 	background: #B3B3B3;
@@ -77,6 +97,7 @@ h2 {
 	position: absolute;
 	left: 0;
 	top: 0px;
+	display: none;
 }
 
 .handle:hover {
@@ -92,6 +113,7 @@ h2 {
 	position: absolute;
 	left: 28px;
 	top: 12px;
+	display: none;
 }
 
 .box:hover {
@@ -102,13 +124,19 @@ h2 {
 	width: 25px;
 	position: absolute;
 	bottom: -1px;
+	display: none;
+}
+
+.delete {
+	position: absolute;
+	right: 20px;
+	top: 9px;
+	display: none;
 }
 
 .delete img {
 	width: 21px;
-	position: absolute;
-	right: 20px;
-	top: 11px;
+
 }
 .delete:hover {
 	cursor: pointer;
