@@ -5,9 +5,11 @@
 	<title>My Shopping List</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
-	<link rel="icon" href="http:/getbootstrap.com/favicon.ico">
+	<link rel="icon" href="images/favicon.png">
 	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/application.js"></script>
+
 </head>
 
 <body>
@@ -50,9 +52,9 @@
 
 <!-- INPUT FIELD -->
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Don't forget to buy...">
+					<input type="text" class="form-control" placeholder="Don't forget to buy..." id="entry">
 					<span class="input-group-btn">
-					<button class="btn btn-info" type="button">
+					<button class="btn btn-info" type="submit" id="add">
 						Add
 					</button>
 			      	</span>
@@ -60,7 +62,7 @@
 
 <!-- SHOPPING LIST -->
 				<ul class="list">
-					<li class="not-bought">
+					<li class="active">
 						<div class="handle"></div>
 						<div class="box">
 							<img src="images/check.png" />
@@ -70,7 +72,7 @@
 							<img src="images/delete.png" />
 						</div>
 					</li>
-					<li class="not-bought">
+					<li class="active">
 						<div class="handle"></div>
 						<div class="box">
 							<img src="images/check.png" />
@@ -80,7 +82,7 @@
 							<img src="images/delete.png" />
 						</div>
 					</li>
-					<li class="not-bought">
+					<li class="active">
 						<div class="handle"></div>
 						<div class="box">
 							<img src="images/check.png" />
@@ -90,7 +92,7 @@
 							<img src="images/delete.png" />
 						</div>
 					</li>
-					<li class="bought">
+					<li class="erased">
 						<div class="handle"></div>
 						<div class="box">
 							<img src="images/check.png" />
@@ -100,7 +102,7 @@
 							<img src="images/delete.png" />
 						</div>
 					</li>
-					<li class="bought">
+					<li class="erased">
 						<div class="handle"></div>
 						<div class="box">
 							<img src="images/check.png" />
@@ -112,18 +114,19 @@
 					</li>
 				</ul>
 			</div>
+
+<!-- FORK IMAGE -->
 			<div class="col-md-5 fork hidden-xs hidden-sm">
 				<div class="inner-fork">
 					<img src="images/fork.png" />
 				</div>
 			</div>
 		</div>
-
-		<footer>
-			<p>© Edoe Cohen Productions 2014</p>
-		</footer>
 	</div>
 
+	<footer>
+		<p>© Edoe Cohen Productions 2014</p>
+	</footer>
 	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
