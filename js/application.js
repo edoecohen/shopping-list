@@ -80,6 +80,8 @@ $(document).ready(function() {
 	$("ul").on("keydown", "li .edit", function(e)  {
 		if (e.keyCode == 13) { 
 			$(this).hide();
+			$(this).siblings(".text").show().text($(this).val());
+			$(this).parent("li").toggleClass("highlighted normal");
 		}
 	});
 
