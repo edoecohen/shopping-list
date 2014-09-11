@@ -141,12 +141,18 @@ h2 {
 .delete:hover {
 	cursor: pointer;
 }
-
+.delete:active {
+	top: 10px;
+}
 .erased {
 	color: #ccc;
 	text-decoration: line-through;
 }
 
+.highlight {
+	background: #dadada;
+	height: 43px;
+}
 
 /* THE FORK IMAGE */
 .fork {

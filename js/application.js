@@ -30,7 +30,43 @@ $(document).ready(function() {
 		if (e.keyCode == 13) { 
 			$("#add").click();
 		}
-	})
-	
+	});
+
+
+// MARK ITEM AS BOUGHT
+	$(".erased").find(".box img").show();
+
+	$("ul").on("click", "li .box", function() {
+		if ( $(this).parent("li").hasClass("active") ) {
+			$(this).find("img").show();
+			$(this).parent("li").toggleClass("active erased");
+		}
+		else {
+			$(this).find("img").hide();
+			$(this).parent("li").toggleClass("erased active");
+		};
+	});
+
+
+// DELETE AN ITEM
+	$("ul").on("click", "li .delete", function() {
+		$(this).parent("li").show(0).css("background","#DBDBDB").delay(120).fadeOut(120);
+	});
+
+// SORTABLE LIST
+	$('.list').sortable({
+	    placeholder: {
+	        element: function(currentItem) {
+	            return $("<li class='highlight'></li>")[0];
+	        },
+	        update: function(container, p) {
+	            return;
+	        }
+	    }
+	});
+
+
 });
+
+
 
