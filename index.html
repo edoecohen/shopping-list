@@ -2,72 +2,108 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Jumbotron Template</title>
-	<link rel="stylesheet" href="css/main.css">
+	<title>My Shopping List</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="icon" href="http:/getbootstrap.com/favicon.ico">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="icon" href="images/favicon.png">
+	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/application.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 </head>
 
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Shopping List</a>
-				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-				<form class="navbar-form navbar-right">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Email">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="Password">
-					</div>
-					<button type="submit" class="btn btn-success">Sign in</button>
-				</form>
-			</div>
-		</div>
-	</div>
 
-	<div class="jumbotron">
-		<div class="container">
-			<h1>Hello, world!</h1>
-			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-			<p><a class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
-		</div>
-	</div>
-
-	<div class="container">
+	<div class="container main">
 		<div class="row">
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-				<p><a class="btn btn-default" role="button">View details »</a></p>
+			<div class="col-md-7">
+				<h2>My Shopping List</h2>
+
+<!-- INPUT FIELD -->
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Don't forget to buy..." id="entry">
+					<span class="input-group-btn">
+					<button class="btn btn-info" type="submit" id="add">
+						Add
+					</button>
+			      	</span>
+		      	</div><!-- /input-group -->
+		      	<div class="alert alert-danger" role="alert">
+		      		<strong>Oh snap!</strong> You must enter an item before trying to add it.
+		      	</div>
+
+<!-- SHOPPING LIST -->
+				<ul class="list">
+					<li class="active normal">
+						<div class="handle"></div>
+						<div class="box">
+							<img src="images/check.png" />
+						</div>
+						<span class="text">milk</span>
+						    <input type="text" class="edit">
+						<div class="delete">
+							<img src="images/delete.png" />
+						</div>
+					</li>
+					<li class="active normal">
+						<div class="handle"></div>
+						<div class="box">
+							<img src="images/check.png" />
+						</div>
+						<span class="text">apples</span>
+						    <input type="text" class="edit">
+						<div class="delete">
+							<img src="images/delete.png" />
+						</div>
+					</li>
+					<li class="active normal">
+						<div class="handle"></div>
+						<div class="box">
+							<img src="images/check.png" />
+						</div>
+						<span class="text">bread</span>
+						    <input type="text" class="edit">
+						<div class="delete">
+							<img src="images/delete.png" />
+						</div>
+					</li>
+					<li class="erased normal">
+						<div class="handle"></div>
+						<div class="box">
+							<img src="images/check.png" />
+						</div>
+						<span>cheese</span>
+						    <input type="text" class="edit">
+						<div class="delete">
+							<img src="images/delete.png" />
+						</div>
+					</li>
+					<li class="erased normal">
+						<div class="handle"></div>
+						<div class="box">
+							<img src="images/check.png" />
+						</div>
+						<span>beer</span>
+						    <input type="text" class="edit">
+						<div class="delete">
+							<img src="images/delete.png" />
+						</div>
+					</li>
+				</ul>
 			</div>
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-				<p><a class="btn btn-default" role="button">View details »</a></p>
-			</div>
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				<p><a class="btn btn-default" role="button">View details »</a></p>
+
+<!-- FORK IMAGE -->
+			<div class="col-md-5 fork hidden-xs hidden-sm">
+				<div class="inner-fork">
+					<img src="images/fork.png" />
+				</div>
 			</div>
 		</div>
-
-		<hr>
-
-		<footer>
-			<p>© Company 2014</p>
-		</footer>
 	</div>
 
+	<footer>
+		<p>© Edoe Cohen Productions 2014</p>
+	</footer>
 	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
